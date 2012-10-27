@@ -11,6 +11,38 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <title>Popcorn-js by dosu</title>
+<title>Slideshare Plugin for Popcorn.js</title>
+    <script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
+	  <script src="https://github.com/dosu/popcorn-js/blob/master/plugins/slideshare/popcorn.slideshare.js"></script>
+	  <script>
+		document.addEventListener( "DOMContentLoaded", function () {
+	
+		  var p = Popcorn( "#video" )
+		  .slideshare({
+			start: 1,
+			end: 5,
+			slideshowurl: "http://www.slideshare.net/storycode/storycode-immersion-5-popcornjs-deep-dive",
+			startslide:1,
+			target: "slidesharediv"
+		  })
+		  .slideshare({
+			start: 5,
+			end: 10,
+			slideshowurl: "http://www.slideshare.net/storycode/storycode-immersion-5-popcornjs-deep-dive",
+			startslide:8,
+			target: "slidesharediv"
+		  })  
+		  .slideshare({
+			start: 10,
+			end: 40,
+			slideshowurl: "http://www.slideshare.net/storycode/storycode-immersion-5-popcornjs-deep-dive",
+			startslide:16,
+			target: "slidesharediv"
+		  })  
+		  .play();
+		}, false );
+	
+	  </script>
   </head>
 
   <body>
@@ -18,7 +50,7 @@
       <div class="inner">
 
         <header>
-          <h1>Popcorn-js</h1>
+          <h1>Slideshare Plugin Demo for Popcorn.js</h1>
           <h2>The HTML5 Media Framework</h2>
         </header>
 
@@ -31,6 +63,29 @@
         <hr>
 
         <section id="main_content">
+<h3 id="qunit-header">Popcorn SlideShare Plug-in Demo</h3>
+  <p>SlideShare slide #1 by 'storycode' will appear at 1 seconds and disappear at 5 seconds.
+  <br />SlideShare slide #8 by 'storycode' will appear at 5 seconds and disappear at 10 seconds.
+  <br />SlideShare slide #12  by 'storycode' will appear at 10 seconds and disappear at 40 seconds.
+  <div>
+    <video id="video"
+      controls
+      width="250px"
+      poster="poster.png">
+
+      <source id="mp4"
+        src="trailer.mp4"
+        type='video/mp4; codecs="avc1, mp4a"'>
+
+      <source id="ogv"
+        src="trailer.ogv"
+        type='video/ogg; codecs="theora, vorbis"'>
+
+      <p>Your user agent does not support the HTML5 Video element.</p>
+
+    </video>
+  </div>
+  <div id="slidesharediv"></div>
           <h3>Welcome to GitHub Pages.</h3>
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
